@@ -1,0 +1,45 @@
+<div id="divWeatherMain" style="margin: 0% 40%"> 
+    <div class="" style="font-size: 25px;margin-top: 10px;margin-left:8%">
+            <span>
+                <span class="blink"> <div [ngClass]="gotData ? 'green-dot' : 'red-dot'" style="width: 50;">
+            
+                    </div></span>
+            
+            </span>
+        <span style="padding-left:15%; text-transform: uppercase;">
+        {{WeatherData.name}}</span></div>
+    <div class="weatherWidgetRow" style="font-size: 20px;margin-top: 5px;">TEMPERATURE:{{WeatherData.temp_celcius}}&nbsp;C</div>
+    <div class="weatherWidgetRow" style="font-size: 20px;">HUMIDITY: {{WeatherData.main.humidity}}%&nbsp;rH</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">{{WeatherData.temp_min}}° / {{WeatherData.temp_max}}°</div>
+    <div class="weatherWidgetRow" style="font-size: 12px;">Feels Like: {{WeatherData.temp_feels_like}}°</div>
+  
+   
+    <div *ngIf="WeatherData.isDay" class="weatherWidgetRow">
+        <i class="fas fa-2x fa-sun sun"></i>  
+    </div>   
+    <div *ngIf="!WeatherData.isDay" class="weatherWidgetRow">
+        <i class="fas fa-2x fa-moon moon"></i>  
+    </div>   
+    <div class="weatherWidgetRow cloudDiv" style="padding-right: 8%;
+    padding-top: 8%;">
+        <i class="fas fa-cloud fa-3x cloud" style="font-size:25px"></i>
+    </div>
+   
+</div>
+
+<!-- <div class="container">
+    <div class="row"> -->
+        <!-- <div>status button</div>
+        <div> city name</div>
+    </div>
+    <div class="row">
+        Temperature: 34% C
+    </div>
+    <div class="row">
+        humidity : 34%
+    </div>
+    <div class="row">
+        Icons
+    </div>
+
+</div> -->
